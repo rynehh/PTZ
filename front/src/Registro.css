@@ -1,0 +1,137 @@
+.regisbody {
+    font-family: Arial, sans-serif;
+    background: url('mew.png'), linear-gradient(to bottom, #5f5f77, #b5b5b5 90%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 300px, auto;
+}
+
+.regissec1 {
+    font-family: 'Montserrat';
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 80%;
+   
+}
+
+.regisform{
+    display: flex; 
+    flex-direction: row; 
+    width: 100%; 
+}
+
+.footer {
+    width: 80%;
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: column;
+    align-items: left;
+    text-decoration: none;
+    color: #000; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.regisdiv{
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px
+}
+
+label{
+    font-size:x-large;
+    
+}
+
+input{
+    width: 80%;
+    padding: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    width: 86%;
+    padding: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 40%;
+    padding: 12px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: background .5s;
+}
+
+button:hover {
+    background: #b5b5b5;
+}
+
+.regislink {
+    display: block;
+    margin-top: 15px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.regislink:hover {
+    text-decoration: underline;
+}
+
+.profile-label {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.profile-label::after {
+    margin: 10px;
+    content: 'Seleccionar Imagen';
+    display: inline-block;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-pic {
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}

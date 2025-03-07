@@ -1,19 +1,20 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import './Login.css';
 
 
 function Login() {
 
    
-    const [correo, setCorreo] = useState('');
+    const [user, setUser] = useState('');
     const [pssw, setPssw] = useState('');
     const nav = useNavigate();
 
     const enviarDatos = () =>{
         axios.post("http://localhost:3001/login",{
 
-            email: correo,
+            user: user,
             pssw: pssw
 
         }
@@ -32,22 +33,23 @@ function Login() {
 
     return (  
         <>
-        <h1>Inicio de Sesion</h1>
-
-            <div class="mb-3">
-                <label class="form-label">Correo</label>
-                <input onChange={(e)=>setCorreo(e.target.value)} type="email" class="form-control"/>          
+           <div className='logbody'>
+                <section class="logsec">
+                    <h2>Bienvenido a Pokemón Training Zone</h2>
+                    <form className='logform'  onSubmit={enviarDatos}>
+                        <label>Usuario:</label>
+                        <input onChange={(e)=>setUser(e.target.value)} type="text" id="usuario" placeholder="Ingresa tu usuario"/>
+                        
+                        <label>Contraseña:</label>
+                        <input onChange={(e)=>setPssw(e.target.value)} type="password" id="password" placeholder="Ingresa tu contraseña"/>
+                        
+                        <button type="submit">Iniciar Sesión</button>
+                        <Link to="/" className='loglink'>¿No tienes cuenta? Regístrate</Link>
+                        
+                    </form>
+                </section>
             </div>
-
-            <div class="mb-3">
-                <label class="form-label">Contraseña</label>
-                <input onChange={(e)=>setPssw(e.target.value)} type="password" class="form-control"/>          
-            </div>
-
-            <button onClick={enviarDatos} type='button' class="button-primary">Iniciar Sesion</button>
-
-            <Link to="/" className='btn btn-outline-info'>Registrarse</Link>
-   
+            
         </>
     );
 }
