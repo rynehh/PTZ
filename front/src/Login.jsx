@@ -11,7 +11,23 @@ function Login() {
     const [pssw, setPssw] = useState('');
     const nav = useNavigate();
 
-    const enviarDatos = () =>{
+    const validarFormulario = () => {
+        if (!user.trim() || !pssw.trim()) {
+            alert("Por favor, completa todos los campos.");
+            return false;
+        }
+        
+        return true;
+    };
+
+    const enviarDatos = (event) =>{
+
+        event.preventDefault(); 
+
+        if (!validarFormulario()) {
+            return;
+        }
+
         axios.post("http://localhost:3001/login",{
 
             user: user,
@@ -28,8 +44,10 @@ function Login() {
                     nav("/Home")
                 }
             }
-        )
-    }
+        ).catch(() => {
+            alert("Verifica los datos ingresados.");
+        });
+    };
 
     return (  
         <>
