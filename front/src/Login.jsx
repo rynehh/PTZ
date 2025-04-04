@@ -44,7 +44,7 @@ function Login() {
                         <input onChange={(e)=>setPssw(e.target.value)} type="password" id="password" placeholder="Ingresa tu contraseña"/>
                         
                         <button type="submit">Iniciar Sesión</button>
-                        <Link to="/" className='loglink'>¿No tienes cuenta? Regístrate</Link>
+                        <Link to="/register" className='loglink'>¿No tienes cuenta? Regístrate</Link>
                         
                     </form>
                 </section>

@@ -65,7 +65,7 @@ function Register2() {
 
                             <label class="profile-label">Foto de perfil:</label>
                             <input type="file" id="profile-pic" accept="image/jpeg, image/png" /*onChange={handleImageChange}*//>
-                            <img id="output" class="profile-pic"/>
+                            <img id="output" class="profile-pic" alt="profile"/>
 
                             <label>Nombre:</label>
                             <input onChange={(e)=>setNombre(e.target.value)} type="text" id="name" placeholder="Ingresa tu nombre" required/>
