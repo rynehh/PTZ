@@ -55,7 +55,7 @@ function Login() {
         <>
            <div className='logbody'>
                 <section class="logsec">
-                    <h2>Bienvenido a Pokemón Training Zone</h2>
+                    <h2>Bienvenido a Pokemón Training Zone jajsjsajasj</h2>
                     <form className='logform'  onSubmit={enviarDatos}>
                         <label>Usuario:</label>
                         <input onChange={(e)=>setUser(e.target.value)} type="text" id="usuario" placeholder="Ingresa tu usuario"/>
