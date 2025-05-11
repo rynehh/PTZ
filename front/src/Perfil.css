@@ -1,0 +1,129 @@
+.home-container-trainer {
+    font-family: 'Montserrat';
+    display: flex;
+    height: 100vh;
+    background: url('mew.png'), #5f5f77;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 300px, auto;
+}
+
+.main-content-trainer {
+    flex: 1;
+    padding: 20px;
+}
+
+.container-trainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-row-trainer {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-section-trainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic-trainer {
+    width: 150px;
+    height: 150px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-trainer{
+    width: 30px;
+    height: auto;
+}
+
+.edit-icon-trainer {
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-icon-trainer:hover{
+    cursor: pointer;
+}
+
+.info-section-trainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-field-trainer {
+    width: 400px;
+    padding: 10px 20px;
+    background-color: #1e1e2f;
+    color: #b5b5b5;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.icon-row-trainer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 45%;
+    margin: 0 auto;
+}
+
+.icon-circle-trainer {
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3%;
+}
+
+.icon-circle-trainer img {
+    width: 100%;
+    height: 100%;
+}
+
+.back-icon-trainer{
+    width: 5%;
+    height: auto;
+    
+}
+
+.back-icon-trainer img {
+    width: 100%;
+    height: 100%;
+}
+
+.back-icon-trainer:hover{
+    cursor: pointer;
+}
+
+.icons-trainer{
+    width: 60%;
+    height: auto;
+}

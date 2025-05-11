@@ -1,0 +1,111 @@
+.home-container {
+    font-family: 'Montserrat';
+    display: flex;
+    height: 100vh;
+    background-color: #545454;
+    color: white;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .poke-rank-section,
+  .poke-random-section {
+    margin-bottom: 30px;
+  }
+  
+  .section-title {
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .pokeball-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;  
+  }
+  
+  .pokeball-icon {
+    width: 180px;
+    height: 180px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background: radial-gradient(white 50%, black 50%);
+    border-radius: 50%;
+    position: relative;   
+    border: 3px solid black;
+  }
+  
+  .pokeball-icon::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 1px solid  black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% - 15px);
+  }
+  
+  .random-pokemon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .random-pokemon-grid2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .pokemon-bubble {
+    width: 145px;
+    height: 145px;
+    margin-right: 10%;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    float:left;
+  }
+
+  .pokemon-bubble2 {
+    width: 145px;
+    height: 145px;
+    margin-left: 10%;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    float:right;
+  }
+  
+  .pokemon-bubble::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: calc(50% - 15px);
+  }
+
+  .pokemon-bubble2::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: calc(50% - 15px);
+  }
+  
+  

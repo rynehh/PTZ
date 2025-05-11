@@ -1,0 +1,103 @@
+.home-container-perfil {
+    font-family: 'Montserrat';
+    display: flex;
+    height: 100vh;
+    background: url('mew.png'), #5f5f77;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 300px, auto;
+}
+
+.main-content-perfil {
+    flex: 1;
+    padding: 20px;
+}
+
+
+.container-perfil {
+    height: 100%;
+    font-family: "Montserrat";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.profile-image-perfil {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.profile-icon-perfil {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
+
+.edit-icon-perfil {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: auto;
+}
+
+.edit-icon-perfil img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.form-group-perfil {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 400px;
+    color: #b5b5b5;
+}
+
+.label-perfil {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-perfil {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #1e1e2f;
+    color: #FFFFFF;
+}
+
+.icons-perfil {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.back-icon-perfil,
+.folder-icon-perfil {
+    width: 10%;
+    height: auto;
+}
+
+.back-icon-perfil img,
+.folder-icon-perfil img {
+    width: 100%;
+    height: 100%;
+}
+
+.folder-icon-perfil:hover,
+.back-icon-perfil:hover,
+.edit-icon-perfil:hover{
+    cursor: pointer;
+}

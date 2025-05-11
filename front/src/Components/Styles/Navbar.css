@@ -1,0 +1,64 @@
+.navbar {
+    display: flex;
+    margin-bottom: 20px;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .sidebar-title {
+    font-size: 1.2rem;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+  
+  .search-bar {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+  }
+  
+  .search-input {
+    padding: 10px;
+    width: 100%;
+    border-radius: 50px;
+    font-family: 'Montserrat';
+    border: none;
+    background-color: black;
+    margin-right: 0px;
+    color: white;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  
+  .search-button {
+    padding: 7.5px;
+    width: 50px;
+    margin: 0px;
+    border-radius: 50%;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .searchimg{
+    height: 20px;
+  }
+  
+  .header-buttons .btn-profile,
+  .header-buttons .btn-logout {
+    background-color: #90c4d0;
+    font-family: 'Montserrat';
+    border: none;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 150px;
+  }
+  
+  .header-buttons {
+    margin-left: 10%;
+  }
+

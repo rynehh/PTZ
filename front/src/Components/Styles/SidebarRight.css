@@ -1,0 +1,53 @@
+.sidebar-right {
+    width: 10%;
+    height: 80%;
+    background-color: #90c4d0;
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+    margin-top: 5%;
+    justify-content: center;
+  }
+  
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .circle-pair {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 40%;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .circle-pair2 {
+    width: 75px;
+    height: 75px;
+    margin-top: 40%;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    float: right;
+  }
+  
+  .circle-pair::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    right: -20px;
+    top: 15px;
+  }
+  
