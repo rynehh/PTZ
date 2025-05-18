@@ -2,9 +2,47 @@
     margin-left: 1%;
 }
 
+.cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; 
+}
+
 .cards-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    flex: 1;
+}
+
+.pagback, .pagadv {
+    width: 1%; 
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.pagback:disabled, .pagadv:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagback:hover, .pagadv:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.rightarrow{
+    width: 20px;
+}
+
+.leftarrow{
+    width: 20px;
+    rotate: 180deg;
 }

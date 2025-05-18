@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import SidebarLeft from './Components/SidebarLeft';
@@ -6,7 +6,62 @@ import Navbar from './Components/Navbar';
 import Pokecard from './Components/Pokecard';
 import './Tipos.css';
 
+const typesList = [
+    "psychic", "bug", "dark", "dragon", "electric", "fairy", "fighting", "fire",
+    "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "rock", "steel", "water"
+];
+
 function Tipos() {
+
+    const [selectedType, setSelectedType] = useState('psychic');
+    const [allPokemons, setAllPokemons] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const pokemonsPerPage = 4;
+
+    useEffect(() => {
+        if (selectedType) {
+            axios.get(`https://pokeapi.co/api/v2/type/${selectedType}`)
+                .then(res => {
+                    const pokemonList = res.data.pokemon
+                        .map(p => p.pokemon)
+                        .filter(p => {
+                            const id = parseInt(p.url.split("/").filter(Boolean).pop());
+                            return id <= 1025;
+                        });
+
+                    setAllPokemons(pokemonList);
+                    setCurrentPage(1);
+                })
+                .catch(err => console.error(err));
+        }
+    }, [selectedType]);
+
+    const indexOfLast = currentPage * pokemonsPerPage;
+    const indexOfFirst = indexOfLast - pokemonsPerPage;
+    const currentPokemons = allPokemons.slice(indexOfFirst, indexOfLast);
+
+    const handlePrevPage = () => setCurrentPage(prev => prev - 1);
+    const handleNextPage = () => setCurrentPage(prev => prev + 1);
+
+    const [pokemonData, setPokemonData] = useState({});
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const promises = currentPokemons.map(p => axios.get(p.url));
+            const results = await Promise.all(promises);
+            const data = {};
+            results.forEach(r => {
+                data[r.data.name] = {
+                    name: r.data.name,
+                    id: r.data.id,
+                    image: r.data.sprites.other['official-artwork'].front_default
+                };
+            });
+            setPokemonData(data);
+        };
+
+        if (currentPokemons.length) fetchData();
+    }, [currentPokemons]);
 
     return (
         <>
@@ -21,55 +76,43 @@ function Tipos() {
 
                         <div className='type-container'>
 
-                         <img className='type-image' src="/types/Psychic.png"/>   
-                         <img className='type-image' src="/types/Bug.png"/>   
-                         <img className='type-image' src="/types/Dark.png"/>   
-                         <img className='type-image' src="/types/Dragon.png"/>   
-                         <img className='type-image' src="/types/Electric.png"/>   
-                         <img className='type-image' src="/types/Fairy.png"/>   
-                         <img className='type-image' src="/types/Fighting.png"/>   
-                         <img className='type-image' src="/types/Fire.png"/>   
-                         <img className='type-image' src="/types/Flying.png"/>   
-                         <img className='type-image' src="/types/Ghost.png"/>   
-                         <img className='type-image' src="/types/Grass.png"/>   
-                         <img className='type-image' src="/types/Ground.png"/>   
-                         <img className='type-image' src="/types/Ice.png"/>   
-                         <img className='type-image' src="/types/Normal.png"/>   
-                         <img className='type-image' src="/types/Poison.png"/>   
-                         <img className='type-image' src="/types/Rock.png"/>   
-                         <img className='type-image' src="/types/Steel.png"/>   
-                         <img className='type-image' src="/types/Water.png"/>   
+                            {typesList.map(type => (
+                                <img
+                                    key={type}
+                                    className='type-image'
+                                    src={`/types/${type.charAt(0).toUpperCase() + type.slice(1)}.png`}
+                                    onClick={() => setSelectedType(type)}
+                                    style={{ cursor: 'pointer' }}
+                                    alt={type}
+                                />
+                            ))}
 
                         </div>
 
-                        <div className='cards-container'>
+                        <div className='cards-wrapper'>
 
-                            <Pokecard title="Mew"
-                                text="#151"
-                                image="mew.jpg"
-                                link="#"
-                            />
+                            <button className='pagback' onClick={handlePrevPage} disabled={currentPage === 1}><img className='leftarrow' src='arrow.png'></img></button>
 
-                            <Pokecard title="Mew"
-                                text="#151"
-                                image="mew.jpg"
-                                link="#"
-                            />
+                            <div className='cards-container'>
 
-                            <Pokecard title="Mew"
-                                text="#151"
-                                image="mew.jpg"
-                                link="#"
-                            />
+                                {currentPokemons.map(p => {
+                                    const poke = pokemonData[p.name];
+                                    return poke ? (
+                                        <Pokecard
+                                            key={poke.id}
+                                            title={poke.name.charAt(0).toUpperCase() + poke.name.slice(1)}
+                                            text={`#${poke.id}`}
+                                            image={poke.image}
+                                            link={`${poke.id}`}
+                                        />
+                                    ) : null;
+                                })}
 
-                            <Pokecard title="Mew"
-                                text="#151"
-                                image="mew.jpg"
-                                link="#"
-                            />
+                            </div>
+
+                            <button className='pagadv' onClick={handleNextPage} disabled={currentPage * pokemonsPerPage >= allPokemons.length}><img className='rightarrow' src='arrow.png'></img></button>
 
                         </div>
-
                     </div>
 
                 </main>

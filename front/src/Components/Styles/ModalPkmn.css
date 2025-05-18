@@ -136,11 +136,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .pokeballs-user img {
     width: 10%;
     height: auto;
     margin: 0 5px;
+}
+
+.btn-delete-review {
+    background-color: #ab3232;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 6%;
+}
+.btn-delete-review:hover {
+    background-color: #8a2727;
+}
+
+.elimbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -10,6 +10,7 @@ import Edit from './Editperfil';
 import Perfil from './Perfil';
 import ModalPkmn from './Components/ModalPkmn';
 import ModalObj from './Components/ModalObj';
+import ProtectedRoute from './ProtectedRoute';  
 
 function Router() {
     return ( 
@@ -18,14 +19,15 @@ function Router() {
                 <Route path="/register" element={<Register2/>}/>
                 <Route path="/" element={<Login/>}/>
                 <Route path="/Home" element={<Home/>}/>
-                <Route path="/Pkdx" element={<Pkdx/>}/>
-                <Route path="/Objetos" element={<Objetos/>}/>
-                <Route path="/Tipos" element={<Tipos/>}/>
-                <Route path="/Debil" element={<Debil/>}/>
-                <Route path="/Edit" element={<Edit/>}/>
-                <Route path="/Perfil" element={<Perfil/>}/>
-                <Route path="/Modal" element={<ModalPkmn/>}/>
-                <Route path="/ModalObj" element={<ModalObj/>}/>
+                
+                <Route path="/Pkdx" element={<ProtectedRoute><Pkdx /></ProtectedRoute>} />
+                <Route path="/Objetos" element={<ProtectedRoute><Objetos /></ProtectedRoute>} />
+                <Route path="/Tipos" element={<ProtectedRoute><Tipos /></ProtectedRoute>} />
+                <Route path="/Debil" element={<ProtectedRoute><Debil /></ProtectedRoute>} />
+                <Route path="/Edit" element={<ProtectedRoute><Edit /></ProtectedRoute>} />
+                <Route path="/Perfil" element={<ProtectedRoute><Perfil /></ProtectedRoute>} />
+                <Route path="/Modal/:id" element={<ProtectedRoute><ModalPkmn /></ProtectedRoute>} />
+                <Route path="/ModalObj/:id" element={<ProtectedRoute><ModalObj /></ProtectedRoute>} />
             </Routes>
         </BrowserRouter>
      );

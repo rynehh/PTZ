@@ -56,9 +56,17 @@
     border-radius: 10px;
     cursor: pointer;
     width: 150px;
+    transition: transform 0.2s ease, background .5s;
   }
   
   .header-buttons {
     margin-left: 10%;
+  }
+
+  .header-buttons .btn-profile:hover,
+  .header-buttons .btn-logout:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #518692;
   }
 

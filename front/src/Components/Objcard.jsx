@@ -9,7 +9,7 @@ const Objcard = ({ title, text, image, link }) => {
             <img src={image} alt="Card" className="custom-card-img" />
             <div className="custom-card-body">
                 <h2 className="custom-card-title">{title}</h2>     
-                <Link to="/ModalObj"><a href={link} className="custom-card-btn"><img className="Poke-btn" src="/pkball.png"/></a></Link>
+                <Link to={`/ModalObj/${link}`}><a href={link} className="custom-card-btn"><img className="Poke-btn" src="/pkball.png"/></a></Link>
             </div>
         </div>
     );

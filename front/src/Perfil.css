@@ -127,3 +127,24 @@
     width: 60%;
     height: auto;
 }
+
+.elimbtn2 {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    width: 60%;
+    height: auto;
+}
+
+.btn-delete-review2 {
+    background-color: #ab3232;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 6%;
+}
+.btn-delete-review2:hover {
+    background-color: #8a2727;
+}
+
